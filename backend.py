@@ -660,6 +660,12 @@ def extract_skills(text, skill_dictionary):
 
 def analyze_resume_with_llm(resume_text, jd_text):
 
+    if client is None:
+        return (
+            "Gemini AI feedback is currently unavailable. "
+            "Resume analysis was completed using ML and NLP techniques."
+        )
+
     prompt = f"""
     Analyze the candidate's resume against the given job description.
 
