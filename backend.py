@@ -26,10 +26,10 @@ load_dotenv(BASE_DIR / ".env")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
 
-if not GEMINI_API_KEY:
-    raise ValueError("Gemini API key not found in .env file!")
-
-client = genai.Client(api_key=GEMINI_API_KEY)
+if GEMINI_API_KEY:
+    client = genai.Client(api_key=GEMINI_API_KEY)
+else:
+    client = None
 
 skill_dictionary = {'Artificial Intelligence and NLP': {'Artificial Intelligence': ['artificial '
                                                                  'intelligence'],
