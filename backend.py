@@ -5,7 +5,11 @@ from pathlib import Path
 
 import fitz
 import nltk
-
+nltk.download('punkt')
+nltk.download('punkt_tab')
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('averaged_perceptron_tagger_eng')
 from docx import Document
 from dotenv import load_dotenv
 from google import genai
